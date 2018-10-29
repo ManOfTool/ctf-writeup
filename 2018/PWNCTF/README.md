@@ -25,7 +25,9 @@ INSERT INTO `attachments` (`id`, `ticket_id`, `atachment`) VALUES
 ```
 
 這不是`PNG`和`JPG`的樣子嗎！於是隨便拿一組出來...
-![test.jpg](/PW API Stage 1/test.jpg)
+
+![test](PW API Stage 1/test.jpg)
+
 真的是圖耶！一不作二不休，把所有的圖片還原吧！
 ```python
 def dumpImage(name, b):
@@ -53,7 +55,8 @@ for image in imgs:
 ```
 
 其中一張圖片果然就藏著flag
-![flag](/PW API Stage 1/30_1095.png)
+
+![flag](PW API Stage 1/30_1095.png)
 
 那個分頁標籤...出題者忘記自己在出題了嗎
 
