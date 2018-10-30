@@ -30,7 +30,7 @@ INSERT INTO `attachments` (`id`, `ticket_id`, `atachment`) VALUES
 ![test](PW%20API%20Stage%201/test.jpg)
 
 真的是圖耶！一不作二不休，把所有的圖片還原吧！
-```python=
+```python
 def dumpImage(name, b):
     if '0xffd8ffe0' in b:
         name += '.jpg'
