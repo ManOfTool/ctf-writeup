@@ -77,7 +77,7 @@ misc|net
 `Google --search "Only in vsftpd-2.3.4: access.o"`
 
 [我找到這個網頁](https://scarybeastsecurity.blogspot.com/2011/07/alert-vsftpd-download-backdoored.html)，看起來是有人把vsftpd 2.3.4官方下載連結的檔案換成帶有後門的版本，只要username帶有笑臉符號`:)`，就會開啟TCP的shell。
-雖然metasploit有可用的module，但是我想用手動的方式(絕對不是懶得裝metasploit)
+雖然metasploit有可用的module，但是我想用[手動的方式](http://www.rwbnetsec.com/vsftp-tcp-21/)(絕對不是懶得裝metasploit)
 
 首先連接ftp，輸入任意字串的使用者名稱，記得要用`:)`結尾，放置。  
 開另一個termianl，下指令`nc vsftp.uni.hctf.fun 6200`。  
