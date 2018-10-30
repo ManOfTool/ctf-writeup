@@ -6,12 +6,9 @@
 ## Semester 1
 ### PW API Stage 1
 misc|frsc
-> Prof. Hackevoll always forgets his passwords. Thats why he wrote himself a password storage API...
->
-> He also used a self developed ticketing system.
->
-> It got so spammed that he doesn't use it anymore.
->
+> Prof. Hackevoll always forgets his passwords. Thats why he wrote himself a password storage API...  
+> He also used a self developed ticketing system.  
+> It got so spammed that he doesn't use it anymore.  
 > Maybe you can still find something useful in the database dump I found.
 
 從壓縮檔解壓縮出`tickets.sql`，一開始看到還不知道要用甚麼開，先丟去Sublimeㄅ～
@@ -65,5 +62,25 @@ for image in imgs:
 那個分頁標籤...出題者忘記自己在出題了嗎
 
 `flag{C0ngratz!Now_Stage2}`
+
+### Very Secure FTP
+misc|net
+> I'm using the very secure ftp daemon for my projects:  
+> ftp vsftp.uni.hctf.fun 2121  
+> Still someone managed to get my secret file :(.  
+> Maybe [this](https://pastebin.com/AetT9sS5) has something to do with it...
+
+題目給了pastebin網址，內容有看沒有懂  
+於是先去跑題目給的ftp，試試用anonymous...果然沒這麼簡單QQ  
+沒什麼想法，不然就把提示的pastebin的第一行拿去Google  
+
+`Google --search "Only in vsftpd-2.3.4: access.o"`
+
+[我找到這個網頁](https://scarybeastsecurity.blogspot.com/2011/07/alert-vsftpd-download-backdoored.html)，看起來是有人把vsftpd 2.3.4官方下載連結的檔案換成帶有後門的版本，只要username帶有笑臉符號`:)`，就會開啟TCP的shell。
+雖然metasploit有可用的module，但是我想用手動的方式(絕對不是懶得裝metasploit)
+
+首先連接ftp，輸入任意字串的使用者名稱，記得要用`:)`結尾，放置。  
+開另一個termianl，下指令`nc vsftp.uni.hctf.fun 6200`。  
+試著輸入`ls`，如果成功了會看到目錄下的檔案，其中一個包含flag。  
 
 ## Semester 3
