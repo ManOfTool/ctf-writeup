@@ -3,6 +3,6 @@
 ### ssocket.py
 用Python socket代替netcat使用，效果不錯
 
-HOST: 主機IP
+`HOST`: 主機IP
 
-PORT: 服務的埠號
+`PORT`: 服務的埠號
