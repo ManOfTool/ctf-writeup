@@ -1,7 +1,7 @@
 # Some useful scripts
 
 ### ssocket.py
-代替netcat使用，效果不錯
+用Python socket代替netcat使用，效果不錯
 
 HOST: 主機IP
 
